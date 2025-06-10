@@ -7,6 +7,9 @@
   <div class="nameTitle">
     <h1>Ezechino T. Reyes</h1>
   </div>
+  <div>
+    <h2>To Add PWA Support</h2>
+  </div>
 </template>
 
 <style>
