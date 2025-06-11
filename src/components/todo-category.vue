@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import { useTodoStore } from '@/stores/todo-store'
-import { createTodos } from '@/composables/createTodos'
+import { useTodos } from '@/composables/useTodos'
 import { ref } from 'vue'
 
-const todos = useTodoStore()
-
-const { inputName, nullChecker, createTask, createCategory, editTask, editInputs, addTask } =
-  createTodos(todos)
+const { inputName, nullChecker, createTask, createCategory, editTask, editInputs, addTask, todos } =
+  useTodos()
 
 const editingTaskId = ref<number | null>(null)
 

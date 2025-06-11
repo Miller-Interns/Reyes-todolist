@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRouter, useRoute } from 'vue-router'
 import { computed } from 'vue'
+import { RouteNames } from './router/route-names'
 
 const router = useRouter()
 const route = useRoute()
@@ -14,7 +15,7 @@ const isApp = computed(() => route.path === '/about')
         v-show="!isApp"
         @click="
           () => {
-            router.push('/about')
+            router.push(RouteNames.About)
           }
         "
       >
@@ -24,7 +25,7 @@ const isApp = computed(() => route.path === '/about')
         v-show="isApp"
         @click="
           () => {
-            router.push('/')
+            router.push(RouteNames.Home)
           }
         "
       >

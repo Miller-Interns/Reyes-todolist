@@ -1,8 +1,9 @@
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useTodoStore } from '@/stores/todo-store'
-import { computed } from 'vue'
 
-export function createTodos(todos: ReturnType<typeof useTodoStore>) {
+export function useTodos() {
+  const todos = useTodoStore()
+
   const inputName = ref('')
   const editInputs = ref<Record<number, string>>({})
   const addTask = ref<Record<number, string>>({})
@@ -33,6 +34,7 @@ export function createTodos(todos: ReturnType<typeof useTodoStore>) {
   }
 
   return {
+    todos,
     inputName,
     nullChecker,
     editTask,
